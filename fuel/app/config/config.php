@@ -31,7 +31,7 @@ return array(
 	 */
 	'environment'	=> Fuel::DEVELOPMENT,
 
-	'profiling'		=> false,
+	'profiling'		=> true,
 
 	'caching'			=> false,
 	'cache_dir'			=> APPPATH.'cache/',
