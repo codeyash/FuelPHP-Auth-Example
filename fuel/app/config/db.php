@@ -19,9 +19,9 @@ return array(
 		'type'			=> 'mysql',
 		'connection'	=> array(
 			'hostname'   => 'localhost',
-			'database'   => 'fuel_dev',
-			'username'   => 'root',
-			'password'   => '',
+			'database'   => 'fuelphp_1',
+			'username'   => 'fuelphp_1',
+			'password'   => 'fuelphp_1',
 			'persistent' => false,
 		),
 		'table_prefix' => '',
