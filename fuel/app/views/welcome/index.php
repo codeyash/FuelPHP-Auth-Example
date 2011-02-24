@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Fuel PHP Framework</title>
+	<title>The Fuel PHP Framework</title>
 	<style type="text/css">
 		body { background-color: #F2F2F2; margin: 45px 0 0 0; font-family: ‘Palatino Linotype’, ‘Book Antiqua’, Palatino, serif; font-size: 18px }
 		#wrapper { width: 740px; margin: 0 auto; }
