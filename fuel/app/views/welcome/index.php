@@ -14,7 +14,7 @@
 </head>
 <body>
 	<div id="wrapper">
-		<h1>FUEL</h1>
+		<h1>FUEL Beta</h1>
 		
 		<div id="content">
 			<p>You have successfully installed the Fuel PHP Framework.</p>
