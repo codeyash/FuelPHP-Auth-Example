@@ -12,8 +12,43 @@ class Controller_Users extends Controller_Common {
 	}
 	public function action_login()
     {
-        $this->template->title = "Login Page";
-        $this->template->content = View::factory('users/login');
+        if(Auth::check())
+        {
+            Output::redirect('/'); // user already logged in
+        }
+
+        $val = Validation::factory('users');
+        $val->add_field('username', 'Your username', 'required|min_length[3]|max_length[20]');
+        $val->add_field('password', 'Your password', 'required|min_mength[3]|max_length[20]');
+        if($val->run())
+        {
+            $auth = Auth::instance();
+            if($auth->login($val->validated('username'), $val->validated('password')))
+            {
+                Session::set_flash('notice', 'FLASH: logged in');
+                Output::redirect('users');
+            }
+            else
+            {
+                $data['username'] = $val->validated('username');
+                $data['login_error'] = 'Wrong username/password. Try again';
+            }
+        }
+        else
+        {
+            if($_POST)
+            {
+                $data['username'] = $val->validated('username');
+                $data['login_error'] = 'Wrong username/password combo. Try again';
+            }
+            else
+            {
+                $data['login_error'] = false;
+            }
+        }
+        $this->template->title = 'Login';
+        $this->template->login_error = @$data['login_error'];
+        $this->template->content = View::factory('users/login', $data);
     }
 	public function action_view($id = null)
 	{
