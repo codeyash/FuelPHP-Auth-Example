@@ -6,7 +6,7 @@ class Controller_Common extends Controller_Template {
     {
         parent::before();
         $uri_string = explode('/', Uri::string());
-
+        Log::info('Uri::string() = '.Uri::string().')');
         if ($uri_string[0] != 'users' and $uri_string[1] != 'login')
         {
             if(\Auth::check())
