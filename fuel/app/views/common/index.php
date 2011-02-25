@@ -1,0 +1,1 @@
+<p>Edit this content in /var/www/jsidhu/fuelphp-1/fuel/app/views/common/index.php</p>
