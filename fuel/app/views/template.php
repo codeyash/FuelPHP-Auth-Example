@@ -18,11 +18,7 @@
 
 		<div id="content">
 
-			<?php if (Session::get_flash('notice')): ?>
-				<p><?php echo Session::get_flash('notice'); ?>
-			<?php endif; ?>
-            
-            <?php if (Session::get_flash('success')): ?>
+			<?php if (Session::get_flash('success')): ?>
                 <?php echo Session::get_flash('success'); ?>
             <?php elseif (Session::get_flash('notice')): ?>
                 <?php echo Session::get_flash('notice'); ?>
