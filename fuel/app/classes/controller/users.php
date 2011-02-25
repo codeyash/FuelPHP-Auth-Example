@@ -55,6 +55,50 @@ class Controller_Users extends Controller_Common {
         Auth::instance()->logout();
         Output::redirect('/');
     }
+    public function action_signup()
+	{
+        if ( Auth::check())
+        {
+            Output::redirect('/');
+        }
+        $val = Validation::factory('user_signup');
+        $val->add_field('username', 'Your username', 'required|min_length[3]|max_length[20]');
+        $val->add_field('password', 'Your password', 'required|min_length[3]|max_length[20]');
+        $val->add_field('email', 'Email', 'required|valid_email');
+        if ( $val->run() )
+        {
+            $create_user = Auth::instance()->create_user(
+                    $val->validated('username'),
+                    $val->validated('password'),
+                    $val->validated('email'),
+                    '100'
+            );
+            if( $create_user )
+            {
+                Session::set_flash('notice', 'FLASH: User created.');
+                Output::redirect('users');
+            }
+            else
+            {
+                throw new Exception('An unexpected error occurred. Please try again.');
+            }
+        }
+        else
+        {
+            if( $_POST )
+            {
+                $data['username'] = $val->validated('username');
+                $data['login_error'] = 'All fields are required.';
+            }
+            else
+            {
+                $data['login_error'] = false;
+            }
+        }
+        $this->template->title = 'Sign Up';
+        $this->template->errors = @$data['login_error'];
+		$this->template->content = View::factory('users/signup');
+	}
 	public function action_view($id = null)
 	{
 		$data['users'] = Model_Users::find($id);

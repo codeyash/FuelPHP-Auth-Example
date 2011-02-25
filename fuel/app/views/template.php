@@ -17,15 +17,15 @@
 		<h1><?php echo $title; ?></h1>
 
 		<div id="content">
-        <ul class="nav">
-                <?php if ( $logged_in ): ?>
-                <li><?php echo Html::anchor('users/logout', 'Logout'); ?></li>
-                <li><?php echo Html::anchor('users', 'users'); ?></li>
-                <?php else: ?>
-				<li><?php echo Html::anchor('users/login', 'Login'); ?></li>
-				<li><?php echo Html::anchor('users/signup', 'Sign Up'); ?></li>
-				<?php endif; ?>
-            </ul>
+<ul class="nav">
+    <?php if ( $logged_in ): ?>
+    <li><?php echo Html::anchor('users/logout', 'Logout'); ?></li>
+    <li><?php echo Html::anchor('users', 'users'); ?></li>
+    <?php else: ?>
+    <li><?php echo Html::anchor('users/login', 'Login'); ?></li>
+    <li><?php echo Html::anchor('users/signup', 'Sign Up'); ?></li>
+    <?php endif; ?>
+</ul>
 
 			<?php if (Session::get_flash('success')): ?>
                 <?php echo Session::get_flash('success'); ?>
