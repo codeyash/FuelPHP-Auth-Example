@@ -6,7 +6,7 @@
 
 <div class="input text required">
     <?php echo Form::label('Username', 'username'); ?>
-    <?php echo Form::input('username', $username, array('size' => 30)); ?>
+    <?php echo Form::input('username', isset($username) ? $username : false, array('size' => 30)); ?>
 </div>
 
 <div class="input password required">
