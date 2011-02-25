@@ -1,6 +1,9 @@
 <?php
-class Controller_Users extends Controller_Template {
-	
+class Controller_Users extends Controller_Common {
+	public function before()
+    {
+        parent::before();
+    }
 	public function action_index()
 	{
 		$data['users'] = Model_Users::find('all');
