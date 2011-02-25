@@ -7,7 +7,7 @@ class Controller_Common extends Controller_Template {
         parent::before();
         $uri_string = explode('/', Uri::string());
 
-        if (count($uri_string)>1 and $uri_string[0] == 'users' and $uri_string[1] == 'login')
+        if (count($uri_string)>1 and $uri_string[0] == 'users' and ($uri_string[1] == 'login' or $uri_string[1] == 'signup'))
         {
             $this->template->logged_in = false;
         }
