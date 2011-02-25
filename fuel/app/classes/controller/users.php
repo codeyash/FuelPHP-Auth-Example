@@ -31,7 +31,7 @@ class Controller_Users extends Controller_Common {
             else
             {
                 $data['username'] = $val->validated('username');
-                $data['login_error'] = 'Wrong username/password. Try again';
+                $data['errors'] = 'Wrong username/password. Try again';
             }
         }
         else
@@ -39,15 +39,15 @@ class Controller_Users extends Controller_Common {
             if($_POST)
             {
                 $data['username'] = $val->validated('username');
-                $data['login_error'] = 'Wrong username/password combo. Try again';
+                $data['errors'] = 'Wrong username/password combo. Try again';
             }
             else
             {
-                $data['login_error'] = false;
+                $data['errors'] = false;
             }
         }
         $this->template->title = 'Login';
-        $this->template->login_error = @$data['login_error'];
+        $this->template->errors = @$data['errors'];
         $this->template->content = View::factory('users/login', $data);
     }
 	public function action_view($id = null)
