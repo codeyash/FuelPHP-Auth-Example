@@ -15,7 +15,7 @@ class Controller_Common extends Controller_Template {
         {
             if(\Auth::check())
             {
-                $user = Auth::intstance()->get_user_id();
+                $user = \Auth::instance()->get_user_id();
                 $this->user_id = $user[1];
                 $this->template->logged_in = true;
             }
