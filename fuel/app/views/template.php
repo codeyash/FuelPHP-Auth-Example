@@ -21,6 +21,14 @@
 			<?php if (Session::get_flash('notice')): ?>
 				<p><?php echo Session::get_flash('notice'); ?>
 			<?php endif; ?>
+            
+            <?php if (Session::get_flash('success')): ?>
+                <?php echo Session::get_flash('success'); ?>
+            <?php elseif (Session::get_flash('notice')): ?>
+                <?php echo Session::get_flash('notice'); ?>
+            <?php elseif (Session::get_flash('error')): ?>
+                <?php echo Session::get_flash('error'); ?>
+            <?php endif; ?>
 
 			<?php echo $content; ?>
 		</div>
