@@ -40,5 +40,3 @@
 	</div>
 </body>
 </html>
-
-<?php echo HTML::anchor('users/view/'.$users->id, 'View'); ?>
