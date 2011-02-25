@@ -50,6 +50,11 @@ class Controller_Users extends Controller_Common {
         $this->template->errors = @$data['errors'];
         $this->template->content = View::factory('users/login', $data);
     }
+    public function action_logout()
+    {
+        Auth::instance()->logout();
+        Output::redirect('/');
+    }
 	public function action_view($id = null)
 	{
 		$data['users'] = Model_Users::find($id);
