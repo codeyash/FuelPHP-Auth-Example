@@ -7,7 +7,11 @@ class Controller_Users extends Controller_Template {
 		$this->template->title = "Users";
 		$this->template->content = View::factory('users/index', $data);
 	}
-	
+	public function action_login()
+    {
+        $this->template->title = "Login Page";
+        $this->template->content = View::factory('users/login');
+    }
 	public function action_view($id = null)
 	{
 		$data['users'] = Model_Users::find($id);

@@ -17,8 +17,6 @@ class Controller_Common extends Controller_Template {
             \Output::redirect('/users/login');
         }
     }
-	
-
 }
 
 /* End of file common.php */
