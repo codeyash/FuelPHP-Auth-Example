@@ -19,7 +19,7 @@ class Controller_Users extends Controller_Common {
 
         $val = Validation::factory('users');
         $val->add_field('username', 'Your username', 'required|min_length[3]|max_length[20]');
-        $val->add_field('password', 'Your password', 'required|min_mength[3]|max_length[20]');
+        $val->add_field('password', 'Your password', 'required|min_length[3]|max_length[20]');
         if($val->run())
         {
             $auth = Auth::instance();
