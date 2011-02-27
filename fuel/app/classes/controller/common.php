@@ -5,9 +5,11 @@ class Controller_Common extends Controller_Template {
     public function before()
     {
         parent::before();
+        
         $uri_string = explode('/', Uri::string());
 
-        if (count($uri_string)>1 and $uri_string[0] == 'users' and ($uri_string[1] == 'login' or $uri_string[1] == 'signup'))
+        //if (count($uri_string)>1 and $uri_string[0] == 'users' and ($uri_string[1] == 'login' or $uri_string[1] == 'signup'))
+        if($this->request->controller == 'users' && ($this->request->action == 'login' or $this->request->action == 'signup'))
         {
             $this->template->logged_in = false;
         }

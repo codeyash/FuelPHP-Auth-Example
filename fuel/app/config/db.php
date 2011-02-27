@@ -20,8 +20,8 @@ return array(
 		'connection'	=> array(
 			'hostname'   => 'localhost',
 			'database'   => 'fuelphp_1',
-			'username'   => 'fuelphp_1',
-			'password'   => 'fuelphp_1',
+			'username'   => 'root',
+			'password'   => '',
 			'persistent' => false,
 		),
 		'table_prefix' => '',
